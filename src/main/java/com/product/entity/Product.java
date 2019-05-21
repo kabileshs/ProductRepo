@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Product {
@@ -18,7 +20,10 @@ private Long userId;
 private String productName;
 private double price;
 private Long quantity;
+@Temporal(TemporalType.DATE)
 private Date date;
+private String userName;
+
 public Long getTransactionId() {
 	return transactionId;
 }
@@ -60,6 +65,12 @@ public Date getDate() {
 }
 public void setDate(Date date) {
 	this.date = date;
+}
+public String getUserName() {
+	return userName;
+}
+public void setUserName(String userName) {
+	this.userName = userName;
 }
 
 }
